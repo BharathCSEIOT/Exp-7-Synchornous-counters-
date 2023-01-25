@@ -48,41 +48,89 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 ### Procedure
 /* write all the steps invloved */
 
+Step 1: Module Declaration. Module is a keywords defined in Verilog.
+
+Step 2: Input-Output Declaration. Clock and reset are the inputs.
+
+Step 3: Declare the always keyword.
+
+Step 4: Use if loop for the functionality.
+
+Step 5: Assign the counter_up & counter_down.
+
+Step 6: End the module
+
+### PROGRAM For UP counter
 
 
-### PROGRAM 
-/*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+
+Developed by: Bharath K
+
+RegisterNumber:  22009080
+
+```
+module uc(input CLK,input reset,output[0:3]counter);
+reg[0:3] counter_up;
+always@(posedge CLK or posedge reset)
+begin
+if(reset)
+counter_up<=4'd0;
+else
+counter_up<=counter_up+4'd1;
+end
+assign counter=counter_up;
+endmodule
+```
 
 
+### RTL LOGIC UP COUNTER  
+![output](/upc.png)
+## TIMING DIGRAM FOR UP COUNTER  
+![output](/upc_td.png)
+### TRUTH TABLE for UP counter
+![output](/upc_tt.png)
 
 
+### PROGRAM For DOWN counter
 
 
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
+Program for flipflops  and verify its truth table in quartus using Verilog programming.
+
+Developed by: Bharath K
+
+RegisterNumber:  22009080
 
 
+```
+module dc(input CLK,input reset,output[0:3]counter);
+reg[0:3] counter_down;
+always@(posedge CLK or posedge reset)
+begin
+if(reset)
+counter_down<=4'd0;
+else
+counter_down<=counter_down-4'd1;
+end
+assign counter=counter_down;
+endmodule
+```
 
 
+### RTL LOGIC DOWN COUNTER  
+![output](/downc.png)
 
 
-
-
-
-### TIMING DIGRAMS FOR COUNTER  
-
-
-
-
-
+### TIMING DIGRAMS FOR DOWN counter
+![output](/downc_td.png)
 ### TRUTH TABLE 
 
-
+![output](/downc_tt.png)
 
 
 
 
 ### RESULTS 
+Thus, 4 bit up and down counters are implemented and its functionality is validated successfully.
+
+
